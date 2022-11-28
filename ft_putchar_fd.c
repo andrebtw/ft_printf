@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 16:27:58 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/25 15:24:01 by anrodri2         ###   ########.fr       */
+/*   Created: 2022/11/28 13:22:58 by anrodri2          #+#    #+#             */
+/*   Updated: 2022/11/28 16:56:10 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+#include "ft_header.h"
 
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <string.h>
-# include <stdarg.h>
-# include <stdint.h>
-# include <stdlib.h>
+void	ft_putchar_fd(char c, int fd)
+{
+	char	character;
 
-int		ft_printf(const char *s, ...);
-void	ft_putnbr_fd(int n, int fd);
-int		ft_check_errors(void);
-void	ft_putstr_fd(char *s, int fd);
-
-#endif
+	character = c;
+	write(fd, &character, 1);
+}
+ 

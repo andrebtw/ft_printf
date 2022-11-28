@@ -6,9 +6,9 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
 #### FILES ####
-SRCS = ft_printf.c ft_check_errors.c ft_putnbr_fd.c ft_putstr_fd.c
+SRCS = ft_printf.c ft_putnbr_fd.c ft_putstr_fd.c ft_putchar_fd.c ft_print_char.c
 OBJS = ${SRCS:.c=.o}
-HEADER = ft_printf.h
+HEADER = ft_header.h
 
 NAME = libftprintf.a
 

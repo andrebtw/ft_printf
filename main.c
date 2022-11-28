@@ -1,7 +1,8 @@
-#include "ft_printf.h"
-
+#include "ft_header.h"
+#include <stdio.h>
 int	main(void)
 {
-	ft_printf("Hello%d W%do %dr%dld", 5, 5, 5, -5);
+	int a = ft_printf(", lebron james %c\n", 'h');
+	printf("%d", a);
 	return (0);
 }

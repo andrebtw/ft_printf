@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 15:23:49 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/28 16:56:14 by anrodri2         ###   ########.fr       */
+/*   Created: 2022/11/28 16:54:02 by anrodri2          #+#    #+#             */
+/*   Updated: 2022/11/28 16:56:02 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_print_char(va_list args)
 {
-	int	i;
+	char	print_c;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	print_c = (char)va_arg(args, int);
+	ft_putchar_fd(print_c, 1);
+	return (1);
 }

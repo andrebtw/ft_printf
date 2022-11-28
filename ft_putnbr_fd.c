@@ -6,11 +6,11 @@
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:20:23 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/25 15:21:27 by anrodri2         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:56:09 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_header.h"
 
 static void	ft_putnbr2(int n, int fd)
 {
