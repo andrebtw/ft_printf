@@ -1,8 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/28 17:06:36 by anrodri2          #+#    #+#             */
+/*   Updated: 2022/11/28 17:19:47 by anrodri2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_header.h"
 #include <stdio.h>
+
 int	main(void)
 {
-	int a = ft_printf(", lebron james %c\n", 'h');
+	int	a;
+
+	a = printf(", lebron james %s\n", "hello");
 	printf("%d", a);
 	return (0);
 }
