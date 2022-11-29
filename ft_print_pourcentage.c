@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_print_pourcentage.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 16:54:02 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/29 16:41:23 by anrodri2         ###   ########.fr       */
+/*   Created: 2022/11/29 18:17:24 by anrodri2          #+#    #+#             */
+/*   Updated: 2022/11/29 18:19:28 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_char(va_list args)
+int	ft_print_pourcentage(void)
 {
-	char	print_c;
-
-	print_c = (char)va_arg(args, int);
-	ft_putchar_fd(print_c, 1);
+	write(1, "%", 1);
 	return (1);
 }
