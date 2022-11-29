@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_pointer_hex.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 17:06:36 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/29 16:07:04 by anrodri2         ###   ########.fr       */
+/*   Created: 2022/11/29 15:01:46 by anrodri2          #+#    #+#             */
+/*   Updated: 2022/11/29 16:08:32 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
-#include <stdio.h>
 
-int	main(void)
+int	ft_print_pointer_hex(va_list args)
 {
-	int	a;
-	char b[20] = "HELLO";
+	unsigned long long	number;
 
-	a = printf(",%p  ejeiofjeiojfeio lebron james\n", b);
-	printf("%d", a);
-	return (0);
+	number = (unsigned long long)va_arg(args, void **);
+	ft_putchar_fd('0', 1);
+	ft_putchar_fd('x', 1);
+	ft_putbase_fd(number, 1, "123456789abcdef");
+	return (14);
 }
-
-/*
-int	main()
-{
-	char b[32] = "hello world";
-	ft_putbase_fd((unsigned long)b, 1, "0123456789abcdef");
-	return 0;
-}*/

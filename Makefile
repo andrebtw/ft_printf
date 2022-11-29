@@ -6,7 +6,8 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
 #### FILES ####
-SRCS = ft_printf.c ft_putnbr_fd.c ft_putstr_fd.c ft_putchar_fd.c ft_print_char.c ft_print_string.c ft_strlen.c
+SRCS = ft_printf.c ft_putnbr_fd.c ft_putstr_fd.c ft_putchar_fd.c ft_print_char.c ft_print_string.c ft_strlen.c \
+		ft_print_pointer_hex.c ft_putbase_fd.c
 OBJS = ${SRCS:.c=.o}
 HEADER = ft_header.h
 

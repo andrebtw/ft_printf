@@ -2,3 +2,5 @@
 *.exe
 *.DS_Store
 *.out
+*.vscode
+*.a

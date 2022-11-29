@@ -6,7 +6,7 @@
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:27:58 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/28 17:21:18 by anrodri2         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:28:06 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ int		ft_printf(const char *s, ...);
 // EACH DIFFERENT CASE //
 int		ft_print_char(va_list args);
 int		ft_print_string(va_list args);
+int		ft_print_pointer_hex(va_list args);
+void	ft_putbase_fd(unsigned long n, int fd, char *base);
 
 #endif
