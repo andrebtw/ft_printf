@@ -6,7 +6,7 @@
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:27:58 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/30 18:06:07 by anrodri2         ###   ########.fr       */
+/*   Updated: 2022/11/30 18:42:47 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,9 @@ int		ft_print_string(va_list args);
 int		ft_print_pointer_hex(va_list args);
 void	ft_putbase_fd(unsigned long n, int fd, char *base);
 int		ft_print_pourcentage(void);
+int		ft_sizeof_nb_base_int(long number, char *base);
+int		ft_sizeof_nb_base(long number, char *base);
+int		ft_sizeof_nb_base_u(unsigned long number, char *base);
+int		ft_print_decimals(va_list args);
 
 #endif

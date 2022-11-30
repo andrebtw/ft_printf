@@ -6,7 +6,7 @@
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:57:45 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/29 18:17:08 by anrodri2         ###   ########.fr       */
+/*   Updated: 2022/11/30 18:30:21 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	ft_printf_char_check(const char *s, int i, va_list args)
 			return (ft_print_string(args));
 		if (s[i + 1] == 'p')
 			return (ft_print_pointer_hex(args));
+		if (s[i + 1] == 'i' || s[i + 1] == 'd')
+			return (ft_print_decimals(args));
 	}
 	else
 		ft_putchar_fd(s[i], 1);

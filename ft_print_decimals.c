@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putbase_fd.c                                    :+:      :+:    :+:   */
+/*   ft_print_decimals.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 17:27:31 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/30 18:18:06 by anrodri2         ###   ########.fr       */
+/*   Created: 2022/11/30 18:21:12 by anrodri2          #+#    #+#             */
+/*   Updated: 2022/11/30 18:35:47 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_recursive_hex(unsigned long n, int fd, char *base)
+int	ft_print_decimals(va_list args)
 {
-	unsigned long long	remainder;
-	unsigned long long	base_size;
+	int	number;
 
-	if (n == 0)
-		return ;
-	base_size = ft_strlen(base);
-	ft_recursive_hex(n / base_size, fd, base);
-	remainder = (n % base_size);
-	write(fd, &base[remainder], 1);
-}
-
-void	ft_putbase_fd(unsigned long n, int fd, char *base)
-{
-	if (!n)
-		write(1, "0", 1);
-	else
-		ft_recursive_hex(n, fd, base);
+	number = va_arg(args, int);
+	ft_putnbr_fd(number, 1);
+	return (ft_sizeof_nb_base_int(number, "0123456789"));
 }
