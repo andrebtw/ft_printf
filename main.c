@@ -6,7 +6,7 @@
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 17:06:36 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/29 19:05:03 by anrodri2         ###   ########.fr       */
+/*   Updated: 2022/11/30 18:13:07 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	main(void)
 	int	a;
 	char b[20] = "HEL";
 
-	a = ft_printf("%p", (void *)1848400);
+	a = ft_printf("%p", (void *)99999999999999);
 	printf("\n%d\n", a);
-	a = printf("%p", (void *)1848400);
+	a = printf("%p", (void *)99999999999999);
 	printf("\n%d\n", a);
 	return (0);
 }
