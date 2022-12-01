@@ -12,6 +12,16 @@
 
 #include "ft_printf.h"
 
+int	ft_print_u_decimals(va_list args)
+{
+	unsigned int	number;
+
+	number = va_arg(args, unsigned int);
+	ft_putnbr_u_fd(number, 1);
+	return (ft_sizeof_nb_base_u_int(number, "0123456789"));
+}
+
+
 int	ft_print_decimals(va_list args)
 {
 	int	number;

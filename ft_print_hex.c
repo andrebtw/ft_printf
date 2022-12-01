@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 17:06:36 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/30 18:41:56 by anrodri2         ###   ########.fr       */
+/*   Created: 2022/12/01 00:58:34 by anrodri2          #+#    #+#             */
+/*   Updated: 2022/12/01 00:58:34 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
+int	ft_print_hex_lower(va_list args)
 {
-	int	a;
+	unsigned int	number;
 
-	a = ft_printf("%y");
-	printf("\n%d\n", a);
-	a = printf("%y");
-	printf("\n%d\n", a);
-	return (0);
+	number = va_arg(args, unsigned int);
+	ft_putbase_int_fd(number, 1, "0123456789abcdef");
+	return (ft_sizeof_nb_base_u(number, "0123456789abcdef"));
 }
 
-/*
-int	main()
+int	ft_print_hex(va_list args)
 {
-	char b[32] = "hello world";
-	ft_putbase_fd((unsigned long)b, 1, "0123456789abcdef");
-	return 0;
-}*/
+	unsigned int	number;
+
+	number = va_arg(args, unsigned int);
+	ft_putbase_int_fd(number, 1, "0123456789ABCDEF");
+	return (ft_sizeof_nb_base_u(number, "0123456789ABCDEF"));
+}

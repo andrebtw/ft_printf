@@ -12,18 +12,13 @@
 
 #include "ft_printf.h"
 
-int	ft_sizeof_nb_base_u(unsigned long number, char *base)
+int	ft_sizeof_nb_base_u_int(unsigned int number, char *base)
 {
 	int	size;
 
 	size = 0;
 	if (!number)
 		return (1);
-	if (number < 0)
-	{
-		size++;
-		number = number * (-1);
-	}
 	while (number != 0)
 	{
 		number = number / ft_strlen(base);
@@ -32,18 +27,13 @@ int	ft_sizeof_nb_base_u(unsigned long number, char *base)
 	return (size);
 }
 
-int	ft_sizeof_nb_base(long number, char *base)
+int	ft_sizeof_nb_base_u(unsigned long number, char *base)
 {
 	int	size;
 
 	size = 0;
 	if (!number)
 		return (1);
-	if (number < 0)
-	{
-		size++;
-		number = number * (-1);
-	}
 	while (number != 0)
 	{
 		number = number / ft_strlen(base);

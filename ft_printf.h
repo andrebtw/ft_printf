@@ -41,8 +41,13 @@ int		ft_print_pointer_hex(va_list args);
 void	ft_putbase_fd(unsigned long n, int fd, char *base);
 int		ft_print_pourcentage(void);
 int		ft_sizeof_nb_base_int(long number, char *base);
-int		ft_sizeof_nb_base(long number, char *base);
 int		ft_sizeof_nb_base_u(unsigned long number, char *base);
 int		ft_print_decimals(va_list args);
+int     ft_print_u_decimals(va_list args);
+int     ft_sizeof_nb_base_u_int(unsigned int number, char *base);
+void    ft_putnbr_u_fd(unsigned int n, int fd);
+void    ft_putbase_int_fd(unsigned int n, int fd, char *base);
+int     ft_print_hex_lower(va_list args);
+int     ft_print_hex(va_list args);
 
 #endif

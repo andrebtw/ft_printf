@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	ft_recursive_hex(unsigned long n, int fd, char *base)
+void	ft_recursive_base(unsigned long n, int fd, char *base)
 {
 	unsigned long long	remainder;
 	unsigned long long	base_size;
@@ -20,7 +20,7 @@ void	ft_recursive_hex(unsigned long n, int fd, char *base)
 	if (n == 0)
 		return ;
 	base_size = ft_strlen(base);
-	ft_recursive_hex(n / base_size, fd, base);
+	ft_recursive_base(n / base_size, fd, base);
 	remainder = (n % base_size);
 	write(fd, &base[remainder], 1);
 }
@@ -30,5 +30,26 @@ void	ft_putbase_fd(unsigned long n, int fd, char *base)
 	if (!n)
 		write(1, "0", 1);
 	else
-		ft_recursive_hex(n, fd, base);
+		ft_recursive_base(n, fd, base);
+}
+
+void	ft_recursive_base_int(unsigned int n, int fd, char *base)
+{
+	unsigned int	remainder;
+	unsigned int	base_size;
+
+	if (n == 0)
+		return ;
+	base_size = ft_strlen(base);
+	ft_recursive_base_int(n / base_size, fd, base);
+	remainder = (n % base_size);
+	write(fd, &base[remainder], 1);
+}
+
+void	ft_putbase_int_fd(unsigned int n, int fd, char *base)
+{
+	if (!n)
+		write(1, "0", 1);
+	else
+		ft_recursive_base(n, fd, base);
 }

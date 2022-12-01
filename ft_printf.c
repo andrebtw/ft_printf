@@ -26,6 +26,12 @@ int	ft_printf_char_check(const char *s, int i, va_list args)
 			return (ft_print_pointer_hex(args));
 		if (s[i + 1] == 'i' || s[i + 1] == 'd')
 			return (ft_print_decimals(args));
+		if (s[i + 1] == 'u')
+			return (ft_print_u_decimals(args));
+		if (s[i + 1] == 'x')
+			return (ft_print_hex_lower(args));
+		if (s[i + 1] == 'X')
+			return (ft_print_hex(args));
 	}
 	else
 		ft_putchar_fd(s[i], 1);
