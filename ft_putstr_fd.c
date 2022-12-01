@@ -6,20 +6,22 @@
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:23:49 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/29 16:24:18 by anrodri2         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:45:27 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
-		write(fd, &s[i], 1);
+		if (write(fd, &s[i], 1) == -1)
+			return (-1);
 		i++;
 	}
+	return (0);
 }

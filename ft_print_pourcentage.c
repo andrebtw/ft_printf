@@ -6,7 +6,7 @@
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:17:24 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/29 18:19:28 by anrodri2         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:44:15 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	ft_print_pourcentage(void)
 {
-	write(1, "%", 1);
+	if (write(1, "%", 1) == -1)
+		return (WRITE_ERROR);
 	return (1);
 }

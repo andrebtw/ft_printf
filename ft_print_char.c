@@ -6,7 +6,7 @@
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:54:02 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/29 16:41:23 by anrodri2         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:40:12 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_print_char(va_list args)
 	char	print_c;
 
 	print_c = (char)va_arg(args, int);
-	ft_putchar_fd(print_c, 1);
+	if (ft_putchar_fd(print_c, 1) == -1)
+		return (WRITE_ERROR);
 	return (1);
 }

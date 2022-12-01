@@ -6,62 +6,76 @@
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:20:23 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/29 16:24:16 by anrodri2         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:45:01 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_putnbr2(int n, int fd)
+static int	ft_putnbr2(int n, int fd)
 {
 	int	remainder;
 
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+		if (write(fd, "-2147483648", 11) == -1)
+			return (-1);
+		return (0);
 	}
 	if (n < 0)
 	{
-		write(fd, "-", 1);
+		if (write(fd, "-", 1) == -1)
+			return (-1);
 		n = -n;
 	}
 	if (n == 0)
-		return ;
-	ft_putnbr2(n / 10, fd);
+		return (0);
+	if (ft_putnbr2(n / 10, fd) == -1)
+		return (-1);
 	remainder = (n % 10) + '0';
-	write(fd, &remainder, 1);
+	if (write(fd, &remainder, 1) == -1)
+		return (-1);
+	return (0);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd)
 {
 	if (n == 0)
 	{
 		n = n + '0';
-		write(fd, &n, 1);
+		if (write(fd, &n, 1) == -1)
+			return (-1);
+		return (0);
 	}
-	else
-		ft_putnbr2(n, fd);
+	if (ft_putnbr2(n, fd) == -1)
+		return (-1);
+	return (0);
 }
 
-static void	ft_putnbr_u_2(unsigned int n, int fd)
+static int	ft_putnbr_u_2(unsigned int n, int fd)
 {
 	int	remainder;
 
 	if (n == 0)
-		return ;
-	ft_putnbr2(n / 10, fd);
+		return (0);
+	if (ft_putnbr2(n / 10, fd) == -1)
+		return (-1);
 	remainder = (n % 10) + '0';
-	write(fd, &remainder, 1);
+	if (write(fd, &remainder, 1) == -1)
+		return (-1);
+	return (0);
 }
 
-void	ft_putnbr_u_fd(unsigned int n, int fd)
+int	ft_putnbr_u_fd(unsigned int n, int fd)
 {
 	if (n == 0)
 	{
 		n = n + '0';
-		write(fd, &n, 1);
+		if (write(fd, &n, 1) == -1)
+			return (-1);
+		return (0);
 	}
-	else
-		ft_putnbr_u_2(n, fd);
+	if (ft_putnbr_u_2(n, fd) == -1)
+		return (-1);
+	return (0);
 }

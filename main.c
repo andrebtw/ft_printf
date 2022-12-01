@@ -6,7 +6,7 @@
 /*   By: anrodri2 <anrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 17:06:36 by anrodri2          #+#    #+#             */
-/*   Updated: 2022/11/30 18:41:56 by anrodri2         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:30:23 by anrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	main(void)
 {
 	int	a;
 
-	a = ft_printf("%y");
+	a = ft_printf("%%%");
 	printf("\n%d\n", a);
-	a = printf("%y");
+	a = printf("%%%");
 	printf("\n%d\n", a);
 	return (0);
 }
